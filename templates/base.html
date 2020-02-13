@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<body style="background-image: linear-gradient(to right top, #e1e6e8, #d8dcdd, #cfd2d3, #c6c8c8);">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static '/css/all.css' %}">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <!-- Custom -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <!-- Custom -->
+  <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
+
+    <title>Val's Realty</title>
+</head>
+
+<body>
+  <!-- Top Bar -->
+  {% include 'partials/_topbar.html' %}
+
+  <!--  NavBar -->
+  {% include 'partials/_navbar.html' %}
+    <!-- Main Content -->
+  {% block content %} {% endblock %}
+
+  <!-- Footer -->
+  {% include 'partials/_footer.html' %}
+
+
+
+
+
+
+
+  <script src="{% static 'js/jquery-3.3.1.min.js' %} "></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %} "></script>
+ <script src="{% static 'js/lightbox.min.js' %} "></script>
+  <script src="{% static 'js/main.js' %} "></script>
+
+</body>
+
+</html>
