@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+from decouple import config
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,10 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'e&o_0ae_o$_%e)b%s!j_imx+o*i2g)xv@q_xgs3ipqi)=8@u)h'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -83,10 +85,10 @@ WSGI_APPLICATION = 'real.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'real',
-        'USER': 'postgres',
-        'PASSWORD': 'valik01',
-        'HOST': 'localhost',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config("DB_PASSWORD"),
+        'HOST': config('DB_HOST'),
     }
 }
 
@@ -142,11 +144,11 @@ MESSAGE_TAGS = {
 }
 
 # EMAIL
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'valsrealtydemo@gmail.com'
-EMAIL_HOST_PASSWORD = 'valsrealty01'
-EMAIL_USE_TLS = True
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = config('EMAIL_USE_TLS')
 
 # SESSIONS
 SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
