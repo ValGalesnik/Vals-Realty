@@ -1,10 +1,15 @@
 from django.shortcuts import get_object_or_404, render
 from django.core.paginator import Paginator
 from .choices import price_choices, bedroom_choices, state_choices
+from django.views.decorators.cache import cache_page
+
 
 from .models import Listing
 
+CACHE_TTL = 10*60
 
+
+@cache_page(CACHE_TTL)
 def index(request):
     listings = Listing.objects.order_by('-list_date').filter(is_published=True)
 
