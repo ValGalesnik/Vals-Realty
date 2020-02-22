@@ -3,6 +3,9 @@ from datetime import datetime
 from realtors.models import Realtor
 
 
+objects = models.Manager()
+
+
 class Listing(models.Model):
     realtor = models.ForeignKey(Realtor, on_delete=models.DO_NOTHING)
     title = models.CharField(max_length=200)
