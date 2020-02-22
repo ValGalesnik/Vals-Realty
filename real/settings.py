@@ -151,21 +151,21 @@ EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 EMAIL_USE_TLS = config('EMAIL_USE_TLS')
 
 # REDIS
-#CACHES = {
-    #"default": {
-        #"BACKEND": "django_redis.cache.RedisCache",
-        #"LOCATION": "redis://127.0.0.1:6379/1",
-        #"OPTIONS": {
-            #"CLIENT_CLASS": "django_redis.client.DefaultClient"
-        #},
-       # "KEY_PREFIX": "example"
-   # }
-#}
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient"
+        },
+        "KEY_PREFIX": "example"
+    }
+}
 
 # SESSIONS
-#SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
-#SESSION_EXPIRE_SECONDS = 7200
-#SESSION_EXPIRE_AFTER_LAST_ACTIVITY_GRACE_PERIOD = 120
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
+SESSION_EXPIRE_SECONDS = 7200
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY_GRACE_PERIOD = 120
 
 # LOCAL SETTINGS FILE FOR PRODUCTION SERVER
 try:
