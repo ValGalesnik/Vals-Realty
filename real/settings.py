@@ -160,7 +160,7 @@ EMAIL_USE_TLS = config('EMAIL_USE_TLS')
         #},
        # "KEY_PREFIX": "example"
    # }
-}
+#}
 
 # SESSIONS
 #SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
