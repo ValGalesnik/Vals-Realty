@@ -6,7 +6,7 @@ from django.views.decorators.cache import cache_page
 
 from .models import Listing
 
-CACHE_TTL = 10*60
+CACHE_TTL = 890
 
 
 @cache_page(CACHE_TTL)

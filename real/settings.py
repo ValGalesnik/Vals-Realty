@@ -47,13 +47,12 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'contacts.apps.ContactsConfig',
 
-
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    #'django_session_timeout.middleware.SessionTimeoutMiddleware',
+    'django_session_timeout.middleware.SessionTimeoutMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -166,11 +165,9 @@ CACHES = {
 }
 
 # SESSIONS
-SESSION_SECURITY_WARN_AFTER = 890
-SESSION_SECURITY_EXPIRE_AFTER = 900
+SESSION_SECURITY_WARN_AFTER = 4
+SESSION_SECURITY_EXPIRE_AFTER = 8
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-
-
 
 # LOCAL SETTINGS FILE FOR PRODUCTION SERVER
 try:
