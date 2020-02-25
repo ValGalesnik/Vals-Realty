@@ -1,6 +1,4 @@
-# **Real Estate Django App**
-
-Val’s Realty App 
+# **Val’s Realty App**
 
 
 FRONTEND PAGES:
